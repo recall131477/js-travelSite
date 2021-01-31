@@ -1,0 +1,41 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+
+  "emmet.triggerExpansionOnTab": true,
+
+  "liveServer.settings.port": 8080,
+  "liveSassCompile.settings.formats": [
+    // This is Default.
+    // {
+    //   "format": "expanded",
+    //   "extensionName": ".css",
+    //   "savePath": null
+    // },
+    // You can add more
+    {
+      "format": "compact",
+      "extensionName": ".css",
+      "savePath": "/css"
+    },
+    // More Complex
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/dist/css/"
+    },
+  ],
+  
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    ".vscode/**"
+  ],
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 2 versions"
+  ]
+  
+}

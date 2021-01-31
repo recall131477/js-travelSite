@@ -1,0 +1,82 @@
+// 文字大小
+$font:(
+  xs: 0.75rem, // 12px
+  sm: 0.875rem, // 14px
+  base: 1rem,
+  lg: 1.125rem, // 18px
+  xl: 1.25rem, // 20px
+  2xl: 1.5rem, // 24px
+  3xl: 1.875rem, // 30px
+  4xl: 2.25rem, // 36px
+  5xl: 3rem // 48px
+);
+
+@each $key,$value in $font {
+  .text-#{$key}{
+    font-size: $value; 
+  }  
+}
+
+
+//初始0.25rem=4px
+$unit: 0.25rem;
+
+$directionMap:(
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  y: vertical,
+  x: horizontal,
+  a: all,
+);
+//padding
+@each $key,$value in $directionMap {
+  @for $i from 0 through 10 {
+    @if $key == a{
+      .p-#{$i} {
+        padding: $i * $unit;
+      }
+    }@else if $key == y {
+      .p#{$key}-#{$i} {
+        padding-top: $i * $unit;
+        padding-bottom: $i * $unit;
+      }
+    }@else if $key == x {
+      .p#{$key}-#{$i} {
+        padding-left: $i * $unit;
+        padding-right: $i * $unit;
+      }
+    }@else{
+      .p#{$key}-#{$i}{
+        padding-#{$value}: $i * $unit;
+      }
+    }
+  }
+}
+
+//margin
+@each $key,$value in $directionMap {
+  @for $i from 0 through 10 {
+    @if $key == a{
+      .m-#{$i} {
+        margin: $i * $unit;
+      }
+    }@else if $key == y {
+      .m#{$key}-#{$i} {
+        margin-top: $i * $unit;
+        margin-bottom: $i * $unit;
+      }
+    }@else if $key == x {
+      .m#{$key}-#{$i} {
+        margin-left: $i * $unit;
+        margin-right: $i * $unit;
+      }
+    }@else{
+      .m#{$key}-#{$i}{
+        margin-#{$value}: $i * $unit;
+      }
+    }
+  }
+}
+
